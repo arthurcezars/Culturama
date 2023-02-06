@@ -31,6 +31,7 @@
 
 .eventos__item h3 {
     grid-area: nome;
+    align-self: center;
 }
 
 .eventos__item h4 {
@@ -39,6 +40,7 @@
 
 .eventos__item h5 {
     grid-area: local;
+    align-self: end;
 }
 
 .eventos__item button {
@@ -83,4 +85,35 @@
         grid-row: 1/3;
     }
 
+}
+
+@media (min-width: 1440px) {
+    .categorias {
+        display: grid;
+        grid-template-columns: calc(50% - 0.75rem) auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "titulo_categorias titulo_categorias"
+            "grid_categorias titulo_destaques"
+            "grid_categorias destaques";
+
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+
+    .categorias__titulo {
+        grid-area: titulo_categorias;
+    }
+
+    .categorias__lista {
+        grid-area: grid_categorias;
+    }
+
+    .categorias__destaques {
+        grid-area: titulo_destaques;
+    }
+
+    .categorias__imagem {
+        grid-area: destaques;
+    }
 }
